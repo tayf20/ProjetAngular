@@ -1,0 +1,41 @@
+<br/><br/><br/>
+<div class="col-lg-8">
+    <form #loginform="ngForm" class="form-contact contact_form" (ngSubmit)="loginUser()"   id="contactForm" novalidate="novalidate">
+       
+        <div class="container">
+        <div class="row justify-content-center">
+           
+                <div class="col-lg-8 ">
+                    <div class="form-group">
+                        <small class="text-danger">{{msg}}</small>
+                        <input class="form-control valid" name="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'" placeholder="Enter your email" [(ngModel)]="user.email" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+                        <!--<small  class="text-danger" [class.d-none]="email.valid || email.untouched">email is required field</small>-->
+                        <div  *ngIf="email.errors && email.invalid && email.touched ">
+                            <small  class="text-danger" *ngIf="email.errors.required">email is required field</small>
+                            <small  class="text-danger" *ngIf="email.errors.pattern">Enter a valid email</small>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="form-group">
+                      
+                        <input class="form-control valid" name="password"  type="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your password'" placeholder="Enter your password" [(ngModel)]="user.password" required #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
+                        <div  *ngIf="password.errors && password.invalid && password.touched ">
+                            <small  class="text-danger" *ngIf="password.errors.required">email is required field</small>
+                            <small  class="text-danger" *ngIf="password.errors.pattern">Enter a valid email</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8 ">
+                    <div class="form-group">
+                        <button type="submit" class="button button-contactForm boxed-btn">Login</button>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+       
+    </form>
+</div>
