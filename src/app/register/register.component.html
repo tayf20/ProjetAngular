@@ -1,42 +1,52 @@
 <br/><br/><br/>
-<div class="col-lg-8">
-    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-        <div class="container">
-        <div class="row justify-content-center">
-           
-                <div class="col-lg-8 ">
-                    <div class="form-group">
-                       
-                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
-                    </div>
-                </div>
-                <div class="col-lg-8 ">
-                    <div class="form-group">
-                       
-                        <input class="form-control valid" name="name" id="name" type="p" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your password">
-                    </div>
-                </div>
-                <div class="col-lg-8 ">
-                    <div class="form-group">
-                      
-                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your e-mail">
-                    </div>
-                </div>
-                <div class="col-lg-8 ">
-                    <div class="form-group">
-                       
-                        <input class="form-control valid" name="name" id="name" type="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your password">
-                    </div>
-                </div>
-                
-                <div class="col-lg-8 ">
-                    <div class="form-group">
-                        <button type="submit" class="button button-contactForm boxed-btn">Register</button>
-                    </div>
-                </div>
-            </div>
-           
+<div class="col-lg-8" *ngIf="!success">
+  <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
+        (ngSubmit)="submit()"
+        novalidate="novalidate">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-8 ">
+          <div class="form-group">
+
+            <input class="form-control valid" name="name" id="firstName" [(ngModel)]="firstName" type="text" onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Enter your name'" placeholder="Enter your First name">
+          </div>
         </div>
-       
-    </form>
+        <div class="col-lg-8 ">
+          <div class="form-group">
+
+            <input class="form-control valid" name="name" id="lastname" type="text" [(ngModel)]="secondName" onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Enter your name'" placeholder="Enter your last name">
+          </div>
+        </div>
+        <
+        <div class="col-lg-8 ">
+          <div class="form-group">
+
+            <input class="form-control valid" name="name" id="password" type="p" [(ngModel)]="password" onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Enter your name'" placeholder="Enter your password">
+          </div>
+        </div>
+        <div class="col-lg-8 ">
+          <div class="form-group">
+
+            <input class="form-control valid" name="name" id="email" type="text" [(ngModel)]="email" onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Enter your name'" placeholder="Enter your e-mail">
+          </div>
+        </div>
+
+        <div class="col-lg-8 ">
+          <div class="form-group">
+            <button type="submit" class="button button-contactForm boxed-btn">Register</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+<div *ngIf="success">
+  <div class="display-1"> Registration work successfully </div>
 </div>

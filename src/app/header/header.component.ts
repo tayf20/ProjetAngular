@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,18 +8,20 @@ import { AuthService } from '../auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+  }
 
-  isAdmin= false;
+  isAdmin = false;
 
   ngOnInit(): void {
-    this.authService.getCurrentUser().subscribe(data =>{
-    if(data.role == 'ADMIN'){
-    this.isAdmin = true ;
-    }else{
-    this.isAdmin= false ;
-    }
-    })
+    this.authService.getCurrentUser().subscribe(data => {
+      console.log(data);
+      if (data.role == 'ADMIN') {
+        this.isAdmin = true;
+      } else {
+        this.isAdmin = false;
+      }
+    });
   }
 
 }
