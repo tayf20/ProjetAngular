@@ -7,21 +7,17 @@ import {AuthService} from '../auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+public isAdmin = false;
   constructor(private authService: AuthService) {
+    
+    
   }
 
-  isAdmin = false;
+  
 
   ngOnInit(): void {
-    this.authService.getCurrentUser().subscribe(data => {
-      console.log(data);
-      if (data.role == 'ADMIN') {
-        this.isAdmin = true;
-      } else {
-        this.isAdmin = false;
-      }
-    });
+    var currentUser = this.authService.getCurrentUser();
+    this.isAdmin = currentUser && currentUser !== null && currentUser.role==="ADMIN"
   }
 
 }

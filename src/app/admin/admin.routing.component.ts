@@ -4,14 +4,14 @@ import { AdminComponent } from './admin.component';
 import { ListPaymentComponent } from './list-payment/list-payment.component';
 const routes: Routes = [
 
-    { path: 'admin', component:AdminComponent,
-    children:[
-      {path: 'list-payment', component:ListPaymentComponent}
+    // { path: 'admin', component:AdminComponent,
+    // children:[
+    //   {path: 'list-payment', component:ListPaymentComponent}
      
      
     
-    ]
-}
+    // ]
+//}
     
 
 

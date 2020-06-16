@@ -14,30 +14,47 @@ import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChildComponent } from './child/child.component';
 import { LisChildComponent } from './lis-child/lis-child.component';
+import { AppComponent } from './app.component';
+import { InnerLayoutComponent } from './layout/page-content/inner-layout/inner-layout.component';
+import { OutLayoutComponent } from './layout/page-content/out-layout/out-layout.component';
 const routes: Routes = [
-{ path: '' , redirectTo: '/home', pathMatch: 'full'},
-{ path: 'home', component: HomeComponent,},
+//  { path: '' , redirectTo: '/home', pathMatch: 'full'},
 
-{ path: 'event', component: EventComponent}, 
-{ path: 'avtivities', component: LatestActivityComponent},
-{ path: 'donate', component: DonateComponent},
-{ path: 'volunteer', component: OurVolunteerComponent},
-{ path: 'contact', component:ContactComponent},
-{ path: 'register', component:RegisterComponent},
-{ path: 'login', component:LoginComponent},
-{ path: 'loginsuccess',component:LoginsuccessComponent},
-{ path: 'activity', component:OurVolunteerComponent},
 
-{ path: 'cart', component:CartComponent},
-{ path: 'admin', component:AdminComponent,
-children:[
-  {path: 'child', component:ChildComponent},
-  {path: 'child/lis-child', component:LisChildComponent}
+// { path: 'event', component: EventComponent}, 
+// { path: 'avtivities', component: LatestActivityComponent},
+// { path: 'donate', component: DonateComponent},
+// { path: 'volunteer', component: OurVolunteerComponent},
+// { path: 'contact', component:ContactComponent},
+// { path: 'register', component:RegisterComponent},
+ 
+// { path: 'loginsuccess',component:LoginsuccessComponent},
+// { path: 'activity', component:OurVolunteerComponent},
+
+// { path: 'cart', component:CartComponent},
+{ path: '', component:InnerLayoutComponent,
+ children:[
+   { path: 'admin', component:AdminComponent},
+   { path: 'home', component: HomeComponent},
+   { path: 'event', component: EventComponent},
+   { path: 'avtivities', component: LatestActivityComponent},
+   { path: 'donate', component: DonateComponent},
+   { path: 'volunteer', component: OurVolunteerComponent},
+   { path: 'contact', component:ContactComponent},
+   { path: 'register', component:RegisterComponent}, ]},
+
+{ path: '', component: OutLayoutComponent,
+ children:[
+   { path: 'login', component:LoginComponent},]}
+// { path: 'admin', component:AdminComponent,
+// children:[
+//   {path: 'child', component:ChildComponent},
+//   {path: 'child/lis-child', component:LisChildComponent}
  
 
-]
+// ]
 
-}
+// }
 ];
 
 @NgModule({

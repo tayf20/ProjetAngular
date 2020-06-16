@@ -27,6 +27,8 @@ import { ChildComponent } from './child/child.component';
 import { LisChildComponent } from './lis-child/lis-child.component';
 import { PageContentComponent } from './layout/page-content/page-content.component';
 import { ListPaymentComponent } from './admin/list-payment/list-payment.component';
+import { InnerLayoutComponent } from './layout/page-content/inner-layout/inner-layout.component';
+import { OutLayoutComponent } from './layout/page-content/out-layout/out-layout.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { ListPaymentComponent } from './admin/list-payment/list-payment.componen
     HeaderComponent,
     FooterComponent,
     DonateComponent,
+    InnerLayoutComponent,
+    OutLayoutComponent,
     OurVolunteerComponent,
     ContactComponent,
     EventComponent,
@@ -56,7 +60,7 @@ import { ListPaymentComponent } from './admin/list-payment/list-payment.componen
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AdminRoutingModule,
+    // AdminRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

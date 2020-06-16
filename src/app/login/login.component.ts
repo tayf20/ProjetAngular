@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+ 
     this.auth.logIn(this.user);
     // this._service.loginUserFromRemote(this.user).subscribe(
     //   data => {
@@ -33,6 +34,8 @@ export class LoginComponent implements OnInit {
     //     this.msg = 'Bad credentials,please enter valid email and password ';
     //   }
     // );
+
   }
+
 
 }

@@ -1,6 +1,6 @@
 <header>
     <div *ngIf="isAdmin" class="admin-header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -34,6 +34,22 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
+      </nav>-->
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
       </nav>
 
       <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -115,7 +131,7 @@
                                 <ul id="navigation">
                                     <li><a routerLink="/home">home</a></li>
                                     <li><a routerLink="/event">Events</a></li>
-                                    <li><a routerLink="/volunteer">Our Volunteer</a></li>
+                                    <li><a routerLink="/volunteer">Our Childrens</a></li>
                                     <li><a routerLink="/avtivities">Latest Avtivities</a></li>
                                     <li><a routerLink="/contact">Contact</a></li>
                                 </ul>
