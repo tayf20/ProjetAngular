@@ -8,12 +8,12 @@ import {AuthService} from '../auth.service';
 })
 export class HeaderComponent implements OnInit {
 public isAdmin = false;
-  constructor(private authService: AuthService) {
-    
-    
+  constructor(public authService: AuthService) {
+
+
   }
 
-  
+
 
   ngOnInit(): void {
     var currentUser = this.authService.getCurrentUser();

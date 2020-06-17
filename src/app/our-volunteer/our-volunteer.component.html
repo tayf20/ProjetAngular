@@ -9,15 +9,15 @@
             </div>
         </div>
         <div class="row justify-content-center">
-        
+
             <div class="col-lg-4 col-md-6">
-                <div class="single_volenteer">
+                <div class="single_volenteer" *ngFor="let child of childred">
                     <a routerLink="/donate" data-scroll-nav='1' class="boxed-btn4">Sponsor me</a>
                     <br/>
                     <div class="volenteer_thumb" id="test">
                         <img src="assets/img/volenteer/enfant.jpg" alt="">
                     </div>
-                    
+
                     <div class="voolenteer_info d-flex align-items-end" >
                         <div class="social_links">
                             <ul>
@@ -37,8 +37,8 @@
                         </div>
                         <br/>
                         <div class="info_inner">
-                            <h4>karim tazi</h4>
-                            <p>10 ans,
+                            <h4>{{child.firstname + child.lastname}}</h4>
+                            <p>{{child.old}},
                               darb aghrab marrakech</p>
 
                         </div>
@@ -50,7 +50,7 @@
                         </div>
 
                          </div>-->
-                    
+
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
 
 
         </div>
-        
+
     </div>
 </div>
 
