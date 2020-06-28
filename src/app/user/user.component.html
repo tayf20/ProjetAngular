@@ -1,0 +1,83 @@
+<!--<div class="row" >
+  <div class="col-lg-2" ><app-sidebar></app-sidebar></div>
+  <div class="col-lg-10" >
+
+<app-header-admin
+>
+
+</app-header-admin>
+</div>-->
+
+<div class="panel panel-default">  
+  <div class="panel-heading">  
+      <h1 style="text-align: center">Users</h1><br>  
+      <div class="row" [hidden]="!deleteMessage">  
+             
+                <div class="col-sm-4"></div>  
+                <div class="col-sm-4">  
+                        <div class="alert alert-info alert-dismissible">  
+                                <button type="button" class="close" data-dismiss="alert">×</button>  
+                                <strong>User Data Deleted</strong>  
+                        </div>  
+                </div>  
+                <div class="col-sm-4"></div>  
+        </div>             
+    </div>  
+  
+    
+  <div class="panel-body">  
+      <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
+      [dtTrigger]="dtTrigger"  >  
+          <thead class="thead-light">  
+              <tr>  
+                  <th>User FirstName</th>  
+                  <th>User LastName</th>  
+                  <th>User Email</th>  
+                  <th>User Password</th>  
+                  <th>Action</th>  
+                    
+              </tr>  
+          </thead>  
+          <tbody>  
+               <tr *ngFor="let user of users ">  
+                  <td>{{user.firstname}}</td>  
+                  <td>{{user.lastname}}</td>  
+                  <td>{{user.email}}</td> 
+                  <td>{{user.password}}</td> 
+                  <td><button (click)="deleteUser(user.iduser)" class='btn btn-primary'>
+                    <i class="fa fa-futboll-0">Delete</i></button>   
+                    <button (click)="updateUser(user.iduser)" class='btn btn-info'  
+                    >Update</button>  
+                  </td>  
+                </tr> 
+                <!--data-toggle="modal" data-target="#myModal"-->  
+          </tbody><br>  
+      </table>  
+  </div>  
+</div>   
+<div>
+  <form #form="ngForm" (ngSubmit)="UpdateUser1(form.value)">
+    <div>
+    
+      <input type="text"[hidden] class="form-control" name="iduser"  [(ngModel)]="user.iduser"/>
+    </div>
+    <div>
+      <label>First name</label>
+      <input type="text" class="form-control" name="firstname" ngModel [(ngModel)]="user.firstname"/>
+    </div>
+    <div>
+      <label>First name</label>
+      <input type="text" class="form-control" name="lastname" ngModel [(ngModel)]="user.lastname"/>
+    </div>
+    <div>
+      <label>First name</label>
+      <input type="email" class="form-control" name="email" ngModel [(ngModel)]="user.email"/>
+    </div>
+    <div>
+      <label>First name</label>
+      <input type="password" class="form-control" name="password" ngModel [(ngModel)]="user.password"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
+  

@@ -1,0 +1,10 @@
+.admin-area .header-area .main-header-area{
+    top:0;
+    background :#000;
+
+}
+
+ 
+.admin-area .header-area .main-header-area .main-menu ul li a:hover {
+    color: #ebebeb;
+}

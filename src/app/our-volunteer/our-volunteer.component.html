@@ -8,17 +8,17 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row " >
 
-            <div class="col-lg-4 col-md-6">
-                <div class="single_volenteer" *ngFor="let child of childred">
-                    <a routerLink="/donate" data-scroll-nav='1' class="boxed-btn4">Sponsor me</a>
+            <div class=" col col-lg-4 col-md-6" *ngFor="let child of childred">
+                <div class="card">
+                <div class="single_volenteer border-info" >
                     <br/>
                     <div class="volenteer_thumb" id="test">
-                        <img [src]="child.imageUrl" alt="">
-                    </div>
+                      <p>  <img [src]="child.imageUrl" alt=""></p>
+                    </div><!--volenteer_thumb-->
 
-                    <div class="voolenteer_info d-flex align-items-end" >
+                    <div class="voolenteer_info d-flex align-items-end border-danger" >
                         <div class="social_links">
                             <ul>
                                 <li>
@@ -37,9 +37,10 @@
                         </div>
                         <br/>
                         <div class="info_inner">
-                            <h4>{{child.firstname + child.lastname}}</h4>
+                            <h4>{{child.firstname }}{{child.lastname}}</h4>
                             <p>{{child.old}},
-                              darb aghrab marrakech</p>
+                                {{child.adress}}
+                              </p>
 
                         </div>
                       <!--div class="row">
@@ -50,9 +51,26 @@
                         </div>
 
                          </div>-->
+                        
+                        
 
-                    </div>
-                </div>
+                    </div><!--voolenteer_info-->
+                    
+                </div><!--single_volenteer-->
+                <div class=" text-center">
+                    <button class="btn btn-info btn-block " (click)="donateopen(child)">Test0</button>
+
+                    <button class="btn btn-
+                    " type="button" data-toggle="collapse" 
+			        aria-expanded="false" aria-controls="option" 
+			       (click)="showOption(child)" title="More">
+			    More ...
+                     </button>
+                     <div class="collapse" [class.show]="child.isOpen">
+                        <p>this is the description !</p>
+                     </div>
+               </div>
+               </div>
             </div>
 
 
@@ -65,3 +83,31 @@
 </div>
 
 <!-- our_volunteer_area_end  -->
+
+
+<!-------------------------------------------------------------->
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col col-lg-3 col-md-4 col-s-12 col-xs-12" *ngFor="let child of childred">
+          <div class="card border border-info shadow-sm p-3 w-100 h-100 " >
+              <img class="img-top">
+              <div class="card-body">
+                  <h4>{{child.firstname }},{{child.lastname}}</h4>
+            <p>{{child.old}},
+                {{child.adress}}
+              </p>
+              </div>
+              <div class="card-footer text-center">
+                    <button class="btn btn-info">Test her !</button>
+              </div>
+            
+
+          </div>
+       </div>
+
+    </div><!--row-->
+    
+  </div>
+
+  <!----------------------------------------------->

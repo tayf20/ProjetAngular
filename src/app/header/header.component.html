@@ -1,6 +1,6 @@
 <header>
-    <div *ngIf="isAdmin" class="admin-header">
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div *ngIf="isAdmin" class="admin-header">
+    <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
           </form>
         </div>
       </nav>-->
-      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <!--<nav class="navbar navbar-expand-sm bg-light navbar-light">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="#">Active</a>
@@ -50,107 +50,117 @@
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>
         </ul>
-      </nav>
+      </nav>-->
+    <div class="row">
+      <div class="col-lg-2" *ngIf="this.showHideSlideBar">
 
-      <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" >Admin panel</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
-      ><!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-          <div class="input-group">
-            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+        <app-sidebar (click)="this.onShowSideBarChange()"></app-sidebar>
+      </div>
+
+      <div class="col-lg-10">
+        <a href="" data-toggle="collapse"></a>
+        <!--<app-header-admin  (click)="this.onShowSideBarChange()" >
+       
+        </app-header-admin>-->
+      
+       
+      </div>
+
+<!--<app-admin></app-admin>-->
+
+    </div>
+  </div>
+
+  <!--    user Panel  -->
+  <div  class="header-area ">
+    <div *ngIf="!isAdmin" class="header-top_area">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-6 col-md-12 col-lg-8" *ngIf="!authService.user">
+            <div class="short_contact_list">
+              <ul>
+
+                <li><a routerLink="/register"> <i class="fa fa-phone"></i> Register</a></li>
+                <li><a routerLink="/login"> <i class="fa fa-envelope"></i>Login</a></li>
+              </ul>
             </div>
           </div>
-        </form>
-        <!-- Navbar-->
-
-        <ul class="navbar-nav ml-auto ml-md-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-              <a class="dropdown-item" >Settings</a><a class="dropdown-item" href="#">Activity Log</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" >Logout</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </div>
-<!--    user Panel  -->
-    <div *ngIf="!isAdmin" class="header-area ">
-        <div class="header-top_area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-md-12 col-lg-8" *ngIf="!authService.user">
-                        <div class="short_contact_list">
-                            <ul>
-                                <li><a routerLink="/register"> <i class="fa fa-phone"></i> Register</a></li>
-                                <li><a  routerLink="/login"> <i class="fa fa-envelope"></i>Login</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-md-6 col-lg-4">
-                        <div class="social_media_links d-none d-lg-block">
-                            <a routerLink="/cart">
-                                <img src="assets/img/basket2.png" alt="">
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>facebook
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-pinterest-p"></i>pinterest
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>linkedin
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-twitter"></i>twitter
-                            </a>
-                           <!-- <a href="/cart">
+          <div class="col-xl-6 col-md-6 col-lg-4">
+            <div class="social_media_links d-none d-lg-block">
+              <a routerLink="/cart">
+                <img src="assets/img/basket2.png" alt="">
+              </a>
+              <a href="#">
+                <i class="fa fa-facebook"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-pinterest-p"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <!-- <a href="/cart">
                                 <img src="assets/img/basket1.png" alt="">
                             </a>-->
-                        </div>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
-        <div id="sticky-header" class="main-header-area">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-xl-3 col-lg-3">
-                        <div class="logo">
-                            <a href="/home">
-                                <img src="assets/img/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-9 col-lg-9">
-                        <div class="main-menu">
-                            <nav>
-                                <ul id="navigation">
-                                    <li><a routerLink="/home">home</a></li>
-                                    <li><a routerLink="/event">Events</a></li>
-                                    <li><a routerLink="/volunteer">Our Childrens</a></li>
-                                    <li><a routerLink="/avtivities">Latest Avtivities</a></li>
-                                    <li><a routerLink="/contact">Contact</a></li>
-                                </ul>
-                            </nav>
-                            <div class="Appointment">
-                                <div class="book_btn d-none d-lg-block">
-                                    <a data-scroll-nav='1' routerLink="/donate">Make a Donate</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-  </header>
-  <!-- header-end -->
+    <div id="sticky-header" class="main-header-area">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-xl-3 col-lg-3">
+            <div class="logo">
+              <a href="/home">
+                <img src="assets/img/logo.png" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-9 col-lg-9">
+            <div class="main-menu">
+              <nav>
+                <!--user Menu-->
+                <ul id="navigation" *ngIf="!isAdmin" >
+                  <li><a routerLink="/home">home</a></li>
+                  <li><a routerLink="/event">Events</a></li>
+                  <li><a routerLink="/volunteer">Our Childrens</a></li>
+                  <li><a routerLink="/avtivities">Latest Avtivities</a></li>
+                  <li><a routerLink="/contact">Contact</a></li>
+                </ul>
 
+                     <!--admin Menu-->
+                     <div  *ngIf="authService.user">
+                <ul id="navigation"  *ngIf="isAdmin" >
+                  <li>
+                      <a  routerLink="/user">view Users</a>
+                  </li>
+                  <li >
+                      <a  routerLink="/child">view Children</a>
+                  </li>
+                  <li >
+                      <a  routerLink="/login">   Logout</a>
+                  </li>
+                </ul>
+              </div>
 
+              </nav>
+              <div *ngIf="!isAdmin" class="Appointment">
+                <div class="book_btn d-none d-lg-block">
+                  <a data-scroll-nav='1' routerLink="/donate">Make a Donate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mobile_menu d-block d-lg-none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header-end -->

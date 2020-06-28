@@ -19,7 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { CartComponent } from './cart/cart.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 
 import { HttpClientModule } from '@angular/common/http';
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
@@ -29,6 +29,11 @@ import { PageContentComponent } from './layout/page-content/page-content.compone
 import { ListPaymentComponent } from './admin/list-payment/list-payment.component';
 import { InnerLayoutComponent } from './layout/page-content/inner-layout/inner-layout.component';
 import { OutLayoutComponent } from './layout/page-content/out-layout/out-layout.component';
+import { AddChildComponent } from './add-child/add-child.component';
+import { HeaderAdminComponent } from './header-admin/header-admin.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { UserComponent } from './user/user.component';
+import { DataTablesModule } from 'angular-datatables';  
 
 @NgModule({
   declarations: [
@@ -53,14 +58,21 @@ import { OutLayoutComponent } from './layout/page-content/out-layout/out-layout.
     LisChildComponent,
     PageContentComponent,
    
-    ListPaymentComponent
+    ListPaymentComponent,
+    HeaderAdminComponent,
+    AddChildComponent,
+    SidebarComponent,
+    UserComponent
+   
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpClientModule,
+    DataTablesModule,
     AppRoutingModule,
     // AdminRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,2 +1,24 @@
+<div class="admin-area">
+    <div>
+<app-header></app-header></div>
 
-<router-outlet></router-outlet>
+<div data-scroll-index='1' class="make_donation_area section_padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div *ngIf="authService.user" class="col-lg-3">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="col-lg-9">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+      
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <span>All Rights Reserved 2019 @JavaGuides</span>
+    </div>
+  </footer>
+  </div>

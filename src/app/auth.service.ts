@@ -25,7 +25,7 @@ export class AuthService {
 
   //
   logIn(user: User) {
-    this.httpClient.post<any>('http://localhost:8082/api/v2/login', user).subscribe(data => {
+    this.httpClient.post<any>('http://localhost:8082/api/v2/authenticate', user).subscribe(data => {
    console.log('data');
    console.log(data);
     localStorage.setItem('user', JSON.stringify(data));

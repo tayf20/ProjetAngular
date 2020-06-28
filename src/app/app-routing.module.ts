@@ -17,6 +17,10 @@ import { LisChildComponent } from './lis-child/lis-child.component';
 import { AppComponent } from './app.component';
 import { InnerLayoutComponent } from './layout/page-content/inner-layout/inner-layout.component';
 import { OutLayoutComponent } from './layout/page-content/out-layout/out-layout.component';
+import { AddChildComponent } from './add-child/add-child.component';
+import { HeaderAdminComponent } from './header-admin/header-admin.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { UserComponent } from './user/user.component';
 const routes: Routes = [
 //  { path: '' , redirectTo: '/home', pathMatch: 'full'},
 
@@ -34,21 +38,26 @@ const routes: Routes = [
 // { path: 'cart', component:CartComponent},
 { path: '', component:InnerLayoutComponent,
  children:[
-   { path: 'admin', component:AdminComponent},
+   //{ path: 'admin', component:AdminComponent},
    { path: 'home', component: HomeComponent},
    { path: 'event', component: EventComponent},
    { path: 'avtivities', component: LatestActivityComponent},
-   { path: 'donate', component: DonateComponent},
+   { path: 'donate/:id', component: DonateComponent},
    { path: 'volunteer', component: OurVolunteerComponent},
    { path: 'contact', component:ContactComponent},
    { path: 'register', component:RegisterComponent}, ]},
 
 { path: '', component: OutLayoutComponent,
  children:[
-   { path: 'login', component:LoginComponent},]}
+   { path: 'login', component:LoginComponent},
+    {path: 'child', component:ChildComponent},
+    {path: 'add-child', component:AddChildComponent},
+    
+    {path: 'user',component:UserComponent},
+    { path: 'admin', component:AdminComponent}]}
 // { path: 'admin', component:AdminComponent,
 // children:[
-//   {path: 'child', component:ChildComponent},
+//  ,
 //   {path: 'child/lis-child', component:LisChildComponent}
  
 

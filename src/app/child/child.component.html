@@ -1,1 +1,50 @@
-<p>child works!</p>
+
+  
+  <div class="user-container">
+    <h2 style="margin: auto"> Childrens Details</h2>
+    <button class="btn btn-success" style="width:100px" > Add child</button>
+    
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>old</th>
+        <th>sexe</th>
+        <th>datenaissance</th>
+        <th>ville</th>
+        <th>adress</th>
+        <th>imageUrl</th>
+        <th>description</th>
+        <th>Actions </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let child of childred">
+        <td class="hidden">{{child.idchild}}</td>
+        <td>{{child.firstname}}</td>
+        <td>{{child.lastname}}</td>
+        <td>{{child.old}}</td>
+        <td>{{child.sexe}}</td>
+        <td>{{child.datenaissance}}</td>
+        <td>{{child.ville}}</td>
+        <td>{{child.adress}}</td>
+        <td>{{child.imageUrl}}</td>
+        <td>{{child.description}}</td>
+        <td class="action">
+          <button class="btn btn-danger" style="width: 50px;" > Delete</button>
+          <button class="btn btn-info" style="margin-left: 20px;"style="width: 50px;"> Edit</button></td>
+      </tr>
+      </tbody>
+    </table>
+  
+  </div>
+
+
+
+
+
+
+
+

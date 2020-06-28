@@ -13,10 +13,10 @@ export class RegistrationService {
   }
 
   public loginUserFromRemote(user: User): Observable<any> {
-    this._http.post<any>('http://localhost:8082/api/v2/login', user).subscribe(data => {
+    this._http.post<any>('http://localhost:8082/api/v2/authenticate', user).subscribe(data => {
 
     });
-    return this._http.post<any>('http://localhost:8082/api/v2/login', user);
+    return this._http.post<any>('http://localhost:8082/api/v2/authenticate', user);
   }
 
   public reg(user: User): Observable<any> {

@@ -1,0 +1,13 @@
+table th{
+padding:0 15px ;
+
+}
+table td{
+    padding:0 15px;
+}
+.action{
+    display: flex;
+}
+.action:first-child{
+    margin-right: 15px;
+}

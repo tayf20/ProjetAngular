@@ -9,7 +9,8 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <form action="#" class="donation_form">
+
+                <form  class="donation_form" (ngSubmit)="onSubmit()"  >
                     <div class="row align-items-center">
                         <div class="col-md-4">
                             <div class="single_amount">
@@ -18,7 +19,7 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="basic-addon1">$</span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="40,200" aria-label="Username" aria-describedby="basic-addon1">
+                                        <input type="text"  class="form-control"  placeholder="40,200" aria-label="Username" aria-describedby="basic-addon1">
                                       </div>
                                 </div>
                             </div>
@@ -28,28 +29,29 @@
                                <div class="fixed_donat d-flex align-items-center justify-content-between">
                                  <div class="input_field m-2">
                                    <div class="input-group">
-                                     <input type="text" id="donatorname" class="form-control" placeholder="donator name" >
+                                     <input type="text" id="donatorname" lass="form-control"  placeholder="donator name" >
                                    </div>
                                  </div>
                                  <div class="input_field m-2">
                                    <div class="input-group">
-                                     <input type="text" id="donatorname2" class="form-control" placeholder="donator name" >
+                                     <input type="text" id="donatoremail" class="form-control"  placeholder="donator email" >
                                    </div>
                                  </div>
                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="donate_now_btn text-center">
+                                <button type="submit" class="boxed-btn4" >Donate Now</button>
+                            </div>
+                        </div>
+            
+                    </div>
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="donate_now_btn text-center">
-                    <a href="#" class="boxed-btn4">Donate Now</a>
-                </div>
-            </div>
-
-        </div>
+        
     </div>
 </div>
