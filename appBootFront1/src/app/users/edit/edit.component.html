@@ -1,0 +1,25 @@
+<div>
+    <form #form="ngForm" (ngSubmit)="UpdateUser(form.value)" ngNativeValidate>
+    <div class="group-control">
+        <label for="">First name</label>
+        <input type="text" name="firstname" class="form-control" id="" [(ngModel)]="users.firstname" required ngModel>
+    </div>
+    <div class="group-control">
+        <label for="">Last name</label>
+        <input type="text" name="lastname" class="form-control" id="" [(ngModel)]="users.lastname" required ngModel>
+    </div>
+    <div class="group-control">
+        <label for="">Email</label>
+        <input type="text" name="email" class="form-control" id="" [(ngModel)]="users.email" required ngModel>
+    </div>
+    <div class="group-control">
+        <label for="">password</label>
+        <input type="text" name="password" class="form-control" id="" [(ngModel)]="users.password" required ngModel>
+    </div>
+    <div class="group-control">
+        <label for="">Role</label>
+        <input type="text" name="role" class="form-control" id="" [(ngModel)]="users.role" required ngModel>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</div>
